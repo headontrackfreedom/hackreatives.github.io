@@ -1,194 +1,545 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hackreatives</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background: #0d1117;
-            color: #fff;
-        }
+<title>Hackreatives | Agencia de Tecnología</title>
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background: rgba(0,0,0,0.6);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        header h1 {
-            color: #00d4ff;
-        }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-        nav a {
-            color: #fff;
-            margin-left: 20px;
-            text-decoration: none;
-            font-weight: 500;
-        }
+<style>
 
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-                        url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover no-repeat;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .hero p {
-            max-width: 600px;
-            margin-bottom: 30px;
-            color: #ccc;
-        }
+body{
+    background:#05070D;
+    color:#fff;
+    overflow-x:hidden;
+}
 
-        .btn {
-            padding: 12px 25px;
-            background: #00d4ff;
-            color: #000;
-            border: none;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        .btn:hover {
-            background: #00aacc;
-        }
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
 
-        .video-section {
-            padding: 80px 10%;
-            text-align: center;
-            background: #111827;
-        }
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        .video-section h3 {
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
+    padding:20px 7%;
 
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            margin: auto;
-            padding-bottom: 56.25%;
-            height: 0;
-        }
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(12px);
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 12px;
-        }
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
 
-        .services {
-            padding: 80px 10%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.logo img{
+    height:42px;
+    object-fit:contain;
+}
 
-        .card {
-            background: #161b22;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s;
-        }
+nav{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
 
-        .card:hover {
-            transform: translateY(-10px);
-            background: #1f2937;
-        }
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #000;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
+nav a:hover{
+    color:#00FF66;
+}
 
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+nav a::after{
+    content:'';
+    position:absolute;
+    bottom:-8px;
+    left:0;
+    width:0%;
+    height:2px;
+    background:#00FF66;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* BOTON CONTACTO */
+
+.btn-menu{
+    padding:12px 24px;
+    border:1px solid #00FF66;
+    border-radius:12px;
+    color:#fff !important;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-menu:hover{
+    background:#00FF66;
+    color:#000 !important;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:140px 7% 100px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.92)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop')
+    center center/cover no-repeat;
+
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    right:-150px;
+    top:-100px;
+
+    width:500px;
+    height:500px;
+
+    background:#00ff6620;
+    border-radius:50%;
+
+    filter:blur(120px);
+}
+
+.hero-content{
+    max-width:700px;
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:4.5rem;
+    line-height:1.1;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.hero h1 span{
+    color:#00FF66;
+}
+
+.hero p{
+    color:#D0D5E0;
+    line-height:1.8;
+    font-size:1.15rem;
+    margin-bottom:40px;
+}
+
+/* BOTONES */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 32px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#00FF66;
+    color:#000;
+    box-shadow:0 0 25px #00ff6640;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 35px #00ff6690;
+}
+
+.btn-outline{
+    border:1px solid #00FF66;
+    color:#fff;
+}
+
+.btn-outline:hover{
+    background:#00FF66;
+    color:#000;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    padding:100px 7%;
+    background:#070B14;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:70px;
+}
+
+.section-title span{
+    color:#00FF66;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:linear-gradient(180deg,#0E1420,#090F19);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:24px;
+
+    padding:40px 35px;
+
+    transition:.4s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#00FF66;
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:#00ff6615;
+    top:-60px;
+    right:-60px;
+    filter:blur(40px);
+}
+
+.icon-box{
+    width:80px;
+    height:80px;
+
+    border-radius:20px;
+
+    background:#00ff660d;
+    border:1px solid #00ff6630;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:25px;
+}
+
+.icon-box i{
+    font-size:2rem;
+    color:#00FF66;
+}
+
+.card h3{
+    font-size:1.7rem;
+    margin-bottom:18px;
+}
+
+.card p{
+    color:#B9C2D0;
+    line-height:1.8;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-section{
+    padding:20px 7% 100px;
+    background:#070B14;
+}
+
+.video-container{
+    position:relative;
+    width:100%;
+    max-width:900px;
+    margin:auto;
+
+    padding-bottom:56.25%;
+    height:0;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.video-container iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.05);
+    color:#8D97A7;
+    background:#05070D;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero{
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
+<!-- =========================
+     MENU
+========================= -->
+
 <header>
-    <h1>Hackreatives</h1>
+
+    <a href="#" class="logo">
+        <img src="logo.png" alt="Hackreatives">
+    </a>
+
     <nav>
+
         <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-        <a href="#">Clientes</a>
+
+        <a href="#services">Servicios</a>
+
+        <a href="#clientes">Clientes</a>
+
+        <a href="#contacto">Contacto</a>
+
+        <a href="https://wa.me/525555038054" class="btn-menu">
+            <i class="fab fa-whatsapp"></i>
+            Contáctanos
+        </a>
+
     </nav>
+
 </header>
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
-    <h2>Impulsamos tu negocio con tecnología</h2>
-    <p>Desarrollo web, apps, automatización e inteligencia digital para llevar tu empresa al siguiente nivel.</p>
-    <a href="https://wa.me/5555038054" class="btn">Contáctanos</a>
+
+    <div class="hero-content">
+
+        <h1>
+            Impulsamos tu negocio
+            con <span>tecnología</span>
+        </h1>
+
+        <p>
+            Desarrollo web, apps móviles, automatización,
+            inteligencia digital y soluciones tecnológicas
+            modernas para empresas que quieren crecer.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="https://wa.me/525555038054"
+               class="btn btn-primary">
+
+                <i class="fab fa-whatsapp"></i>
+                Contáctanos
+
+            </a>
+
+            <a href="#services"
+               class="btn btn-outline">
+
+                Ver servicios
+
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- <section class="video-section">
-    <h3>Conoce nuestra agencia</h3>
-    <div class="video-container">
-        <iframe 
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-            title="Video Agencia"
-            frameborder="0" 
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+    <h2 class="section-title">
+        Nuestros <span>servicios</span>
+    </h2>
+
+    <div class="services-grid">
+
+        <div class="card">
+
+            <div class="icon-box">
+                <i class="fas fa-code"></i>
+            </div>
+
+            <h3>Desarrollo Web</h3>
+
+            <p>
+                Creamos sitios modernos, rápidos y
+                responsivos enfocados en resultados.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon-box">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+
+            <h3>Apps Móviles</h3>
+
+            <p>
+                Aplicaciones Android y iOS creadas
+                a la medida de tu negocio.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon-box">
+                <i class="fas fa-gear"></i>
+            </div>
+
+            <h3>Automatización</h3>
+
+            <p>
+                Optimizamos procesos mediante
+                soluciones inteligentes y escalables.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     VIDEO
+========================= -->
+
+<section class="video-section">
+
+    <h2 class="section-title">
+        Conoce nuestra <span>agencia</span>
+    </h2>
+
+    <!-- <div class="video-container">
+
+        <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Hackreatives Video"
+            frameborder="0"
             allowfullscreen>
         </iframe>
-    </div>
-</section>
- -->
-<section class="services">
-    <div class="card">
-        <h4>Desarrollo Web</h4>
-        <p>Creación de sitios modernos, rápidos y responsivos.</p>
-    </div>
-    <div class="card">
-        <h4>Apps Móviles</h4>
-        <p>Aplicaciones iOS y Android a la medida.</p>
-    </div>
-    <div class="card">
-        <h4>Automatización</h4>
-        <p>Optimiza procesos con soluciones inteligentes.</p>
-    </div>
+
+    </div> -->
+
 </section>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-    © 2026  Agency - Todos los derechos reservados
+    © 2026 Hackreatives — Agencia de Tecnología.
+    Todos los derechos reservados.
 </footer>
 
 </body>
