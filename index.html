@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hackreatives</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0d1117;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: #00d4ff;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover no-repeat;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: #00d4ff;
+            color: #000;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #00aacc;
+        }
+
+        .video-section {
+            padding: 80px 10%;
+            text-align: center;
+            background: #111827;
+        }
+
+        .video-section h3 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .services {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #161b22;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: #1f2937;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #000;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hackreatives</h1>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+        <a href="#">Clientes</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Impulsamos tu negocio con tecnología</h2>
+    <p>Desarrollo web, apps, automatización e inteligencia digital para llevar tu empresa al siguiente nivel.</p>
+    <a href="#" class="btn">Contáctanos</a>
+</section>
+
+<!-- <section class="video-section">
+    <h3>Conoce nuestra agencia</h3>
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="Video Agencia"
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+ -->
+<section class="services">
+    <div class="card">
+        <h4>Desarrollo Web</h4>
+        <p>Creación de sitios modernos, rápidos y responsivos.</p>
+    </div>
+    <div class="card">
+        <h4>Apps Móviles</h4>
+        <p>Aplicaciones iOS y Android a la medida.</p>
+    </div>
+    <div class="card">
+        <h4>Automatización</h4>
+        <p>Optimiza procesos con soluciones inteligentes.</p>
+    </div>
+</section>
+
+<footer>
+    © 2026  Agency - Todos los derechos reservados
+</footer>
+
+</body>
+</html>
